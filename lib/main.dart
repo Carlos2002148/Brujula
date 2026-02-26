@@ -1,5 +1,5 @@
 import 'package:brujula/app_color.dart';
-import 'package:brujula/brujula.dart';
+import 'package:brujula/homeScreen.dart'; // Asegúrate de importar tu nueva pantalla de inicio
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,13 +12,16 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Brujula',
+      title: 'Brujula Urbana', // Actualizamos el título del sistema
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: AppColor.primaryColor
+        // Aplicamos el tema oscuro global basado en tu paleta urbana
+        brightness: Brightness.dark,
+        primaryColor: AppColor.PrimaryDarkColor,
+        scaffoldBackgroundColor: AppColor.primaryColor,
       ),
-      home: const brujula_pantalla(),
+      // Cambiamos brujula_pantalla() por HomeScreen() para que sea lo primero en verse
+      home: const HomeScreen(),
     );
   }
 }
